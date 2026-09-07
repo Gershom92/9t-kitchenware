@@ -3,329 +3,343 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>9t Quality Kitchenware | Premium Tools for Your Kitchen</title>
+    <title>9t Quality Kitchenware | Premium Cookware & Appliances</title>
+    <meta name="description" content="Discover durable, elegant, and high-performance kitchenware at 9t Quality Kitchenware in Uganda. Fast delivery available.">
+    
     <style>
-        /* Base styles and colors */
+        /* Base Styling */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            scroll-behavior: smooth;
         }
-
         body {
-            background-color: #faf7f2; /* Soft cream background */
-            color: #2c2c2c; /* Charcoal text */
+            color: #333;
+            background-color: #f8f9fa;
             line-height: 1.6;
         }
 
-        /* Navigation Bar */
+        /* Top Announcement Bar */
+        .announcement-bar {
+            background-color: #d9534f;
+            color: #fff;
+            text-align: center;
+            padding: 8px 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Header & Navigation */
         header {
             background-color: #ffffff;
-            padding: 15px 5%;
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            gap: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 15px 5%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
-
-        @media (min-width: 600px) {
-            header {
-                flex-direction: row;
-                justify-content: space-between;
-            }
-        }
-
         .logo {
-            font-size: 22px;
+            font-size: 1.4rem;
             font-weight: bold;
-            color: #c85a32; /* Terracotta Orange */
+            color: #111;
             text-decoration: none;
-            letter-spacing: 0.5px;
         }
-
         nav a {
+            margin-left: 20px;
             text-decoration: none;
             color: #555;
-            margin: 0 10px;
             font-weight: 500;
-            font-size: 14px;
-            transition: color 0.3s;
+            transition: color 0.2s;
         }
-
         nav a:hover {
-            color: #c85a32;
+            color: #d9534f;
         }
 
-        /* Hero Banner */
+        /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), 
-                        url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
-            height: 55vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            color: #fff;
             text-align: center;
-            color: white;
-            padding: 20px;
+            padding: 80px 20px;
         }
-
         .hero h1 {
-            font-size: 32px;
-            margin-bottom: 12px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
-
         .hero p {
-            font-size: 16px;
-            margin-bottom: 20px;
-            max-width: 500px;
-            opacity: 0.9;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 25px auto;
         }
-
-        .btn {
+        .btn-primary {
             display: inline-block;
-            background-color: #c85a32;
-            color: white;
+            background-color: #d9534f;
+            color: #fff;
             padding: 12px 28px;
+            border-radius: 5px;
             text-decoration: none;
-            border-radius: 4px;
             font-weight: bold;
-            font-size: 15px;
-            transition: background 0.3s;
+            transition: background-color 0.2s;
+        }
+        .btn-primary:hover {
+            background-color: #c9302c;
         }
 
-        .btn:hover {
-            background-color: #a4431e;
+        /* Products Grid */
+        .section-padding {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-
-        /* Products Section */
-        .products-section {
-            padding: 50px 5%;
-            text-align: center;
-        }
-
         .section-title {
-            font-size: 26px;
-            margin-bottom: 8px;
-            color: #2c2c2c;
-        }
-
-        .section-subtitle {
-            color: #777;
-            font-size: 14px;
+            text-align: center;
             margin-bottom: 30px;
         }
-
-        .grid {
+        .section-title h2 {
+            font-size: 2rem;
+            color: #111;
+        }
+        .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 25px;
         }
-
-        .card {
-            background: white;
+        .product-card {
+            background-color: #fff;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
-
-        .card img {
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        .product-card img {
             width: 100%;
-            height: 240px;
+            height: 220px;
             object-fit: cover;
         }
-
-        .card-info {
+        .product-details {
             padding: 20px;
-            text-align: left;
+            display: flex;
+            flex-direction: column;
             flex-grow: 1;
+            justify-content: space-between;
         }
-
-        .card-info h3 {
+        .product-title {
+            font-size: 1.1rem;
             margin-bottom: 8px;
-            font-size: 18px;
-            color: #2c2c2c;
+            color: #222;
         }
-
-        .price {
-            font-size: 18px;
+        .product-price {
+            font-size: 1.25rem;
             font-weight: bold;
-            color: #c85a32;
-            margin-top: 10px;
+            color: #d9534f;
+            margin-bottom: 15px;
+        }
+        .btn-whatsapp {
+            display: inline-block;
+            text-align: center;
+            background-color: #25D366;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+        .btn-whatsapp:hover {
+            background-color: #1ebe57;
         }
 
         /* Contact Section */
-        .contact {
-            background-color: #ffffff;
-            padding: 50px 5%;
-            text-align: center;
+        .contact-section {
+            background-color: #fff;
             border-top: 1px solid #eee;
         }
-
         .contact-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: #faf7f2;
-            padding: 30px 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: space-between;
+            margin-top: 20px;
         }
-
-        .contact-details {
-            margin: 20px 0;
-            text-align: left;
+        .contact-info {
+            flex: 1;
+            min-width: 250px;
         }
-
-        .contact-item {
+        .contact-info div {
             margin-bottom: 15px;
-            font-size: 16px;
         }
-
-        .contact-item strong {
-            color: #c85a32;
-        }
-
-        .contact-item a {
-            color: #2c2c2c;
+        .contact-info a {
+            color: #d9534f;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 500;
         }
 
-        .contact-item a:hover {
-            text-decoration: underline;
-        }
-
-        /* Direct WhatsApp Button */
-        .whatsapp-btn {
-            display: inline-block;
-            background-color: #25D366; /* Official WhatsApp Green */
+        /* Floating WhatsApp Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25D366;
             color: white;
-            padding: 14px 30px;
+            padding: 12px 20px;
+            border-radius: 50px;
             text-decoration: none;
-            border-radius: 30px;
             font-weight: bold;
-            font-size: 16px;
-            margin-top: 15px;
-            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
-            transition: transform 0.2s, background-color 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s;
         }
-
-        .whatsapp-btn:hover {
-            background-color: #128C7E;
-            transform: scale(1.03);
+        .floating-whatsapp:hover {
+            transform: scale(1.05);
         }
 
         /* Footer */
         footer {
-            background-color: #1e1e1e;
-            color: white;
+            background-color: #111;
+            color: #aaa;
             text-align: center;
-            padding: 25px 20px;
-        }
-
-        footer p {
-            font-size: 13px;
-            opacity: 0.7;
+            padding: 20px;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        🚚 Fast Delivery Across Kampala & Countrywide | Pay on Delivery Available
+    </div>
+
+    <!-- Header -->
     <header>
         <a href="#" class="logo">9t Quality Kitchenware</a>
         <nav>
             <a href="#">Home</a>
-            <a href="#products">Our Products</a>
-            <a href="#contact">Contact Us</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <!-- Main Hero Banner -->
+    <!-- Hero Section -->
     <section class="hero">
         <h1>Quality Tools for the Heart of Your Home</h1>
         <p>Discover durable, elegant, and high-performance kitchenware designed to elevate your everyday cooking.</p>
-        <a href="#products" class="btn">Shop Our Collection</a>
+        <a href="#products" class="btn-primary">Shop Our Collection</a>
     </section>
 
     <!-- Products Section -->
-    <section id="products" class="products-section">
-        <h2 class="section-title">Our Featured Items</h2>
-        <p class="section-subtitle">Premium quality kitchen products at incredible prices.</p>
-        
-        <div class="grid">
-            <!-- Product 1 -->
-            <div class="card">
+    <section id="products" class="section-padding">
+        <div class="section-title">
+            <h2>Our Featured Items</h2>
+            <p>Premium quality kitchen products at incredible prices.</p>
+        </div>
+
+        <div class="product-grid">
+            
+            <!-- Item 1 -->
+            <div class="product-card">
                 <img src="https://i.postimg.cc/J492wNdP/2deefa47e0fc483ab867d4f5c89fe849.jpg" alt="Hoffmans Infrared Cooker">
-                <div class="card-info">
-                    <h3>Hoffman's Infrared Cooker</h3>
-                    <p class="price">120,000 UGX</p>
+                <div class="product-details">
+                    <div>
+                        <h3 class="product-title">Hoffman's Infrared Cooker</h3>
+                        <p class="product-price">120,000 UGX</p>
+                    </div>
+                    <a href="https://wa.me/256784891092?text=Hello%209t%20Quality%20Kitchenware!%20I%20want%20to%20order%20the%20Hoffman's%20Infrared%20Cooker." target="_blank" class="btn-whatsapp">
+                        Order on WhatsApp
+                    </a>
                 </div>
             </div>
 
-            <!-- Product 2 -->
-            <div class="card">
+            <!-- Item 2 -->
+            <div class="product-card">
                 <img src="https://i.postimg.cc/XYdDnrTP/36a31d09056040c6adfaa9d2c113fd45.jpg" alt="Black Tornado Non-Stick Dish with Frying Pan">
-                <div class="card-info">
-                    <h3>Black Tornado Non-Stick Dish & Frying Pan</h3>
-                    <p class="price">180,000 UGX</p>
+                <div class="product-details">
+                    <div>
+                        <h3 class="product-title">Black Tornado Non-Stick Dish & Frying Pan</h3>
+                        <p class="product-price">180,000 UGX</p>
+                    </div>
+                    <a href="https://wa.me/256784891092?text=Hello%209t%20Quality%20Kitchenware!%20I%20want%20to%20order%20the%20Black%20Tornado%20Non-Stick%20Dish%20%26%20Frying%20Pan." target="_blank" class="btn-whatsapp">
+                        Order on WhatsApp
+                    </a>
                 </div>
             </div>
 
-            <!-- Product 3 -->
-            <div class="card">
+            <!-- Item 3 -->
+            <div class="product-card">
                 <img src="https://i.postimg.cc/pLz1Pmg6/44aa7b8341d54601b97a87773a62093f.jpg" alt="Dinner Set 24 Pieces">
-                <div class="card-info">
-                    <h3>Premium Dinner Set (24 Pieces)</h3>
-                    <p class="price">150,000 UGX</p>
+                <div class="product-details">
+                    <div>
+                        <h3 class="product-title">Premium Dinner Set (24 Pieces)</h3>
+                        <p class="product-price">150,000 UGX</p>
+                    </div>
+                    <a href="https://wa.me/256784891092?text=Hello%209t%20Quality%20Kitchenware!%20I%20want%20to%20order%20the%20Premium%20Dinner%20Set%20(24%20Pieces)." target="_blank" class="btn-whatsapp">
+                        Order on WhatsApp
+                    </a>
                 </div>
             </div>
 
-            <!-- Product 4 -->
-            <div class="card">
+            <!-- Item 4 -->
+            <div class="product-card">
                 <img src="https://images.unsplash.com/photo-1621972750749-0fbb1abb7736?auto=format&fit=crop&w=500&q=80" alt="Hoffmans Air Fryer">
-                <div class="card-info">
-                    <h3>Hoffmans Air Fryer (6 Litres)</h3>
-                    <p class="price">150,000 UGX</p>
+                <div class="product-details">
+                    <div>
+                        <h3 class="product-title">Hoffmans Air Fryer (6 Litres)</h3>
+                        <p class="product-price">150,000 UGX</p>
+                    </div>
+                    <a href="https://wa.me/256784891092?text=Hello%209t%20Quality%20Kitchenware!%20I%20want%20to%20order%20the%20Hoffmans%20Air%20Fryer%20(6%20Litres)." target="_blank" class="btn-whatsapp">
+                        Order on WhatsApp
+                    </a>
                 </div>
             </div>
+
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <p class="section-subtitle">Have questions or want to place an order? Reach out to us today!</p>
+    <section id="contact" class="section-padding contact-section">
+        <div class="section-title">
+            <h2>Get In Touch</h2>
+            <p>Have questions or want to place a custom order? Reach out to us today!</p>
+        </div>
 
         <div class="contact-container">
-            <div class="contact-details">
-                <div class="contact-item">
-                    <strong>Email:</strong> <br>
+            <div class="contact-info">
+                <div>
+                    <strong>Email:</strong><br>
                     <a href="mailto:gershommuwanguzi92@gmail.com">gershommuwanguzi92@gmail.com</a>
                 </div>
-                <div class="contact-item">
-                    <strong>Call Us:</strong> <br>
-                    <a href="tel:+256784891092">+256 784 891092</a> <br>
+                <div>
+                    <strong>Call Us:</strong><br>
+                    <a href="tel:+256784891092">+256 784 891092</a><br>
                     <a href="tel:+256740701068">+256 740 701068</a>
                 </div>
             </div>
-
-            <!-- WhatsApp Direct Button -->
-            <a href="https://wa.me/256784891092?text=Hello%209t%20Quality%20Kitchenware!%20I'm%20interested%20in%20your%20products." target="_blank" class="whatsapp-btn">
-                💬 Chat with Us on WhatsApp
-            </a>
+            <div>
+                <a href="https://wa.me/256784891092?text=Hello%209t%20Quality%20Kitchenware!%20I'm%20interested%20in%20your%20products." target="_blank" class="btn-whatsapp" style="padding: 15px 25px;">
+                    💬 General Inquiry via WhatsApp
+                </a>
+            </div>
         </div>
     </section>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/256784891092?text=Hello%209t%20Quality%20Kitchenware!%20I%20have%20a%20question." target="_blank" class="floating-whatsapp">
+        💬 Chat with Us
+    </a>
 
     <!-- Footer -->
     <footer>
