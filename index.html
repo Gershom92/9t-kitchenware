@@ -3,89 +3,247 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>9t Quality Kitchenware</title>
+  <title>9t Quality Kitchenware | Kampala</title>
   <style>
     :root {
       --primary: #d32f2f;
-      --secondary: #25D366;
-      --dark: #222;
-      --light: #f8f9fa;
-      --gray: #666;
+      --primary-dark: #b71c1c;
+      --whatsapp: #25D366;
+      --dark: #1a1a1a;
+      --light-bg: #f4f6f8;
+      --white: #ffffff;
+      --gray: #666666;
+      --border: #e0e0e0;
+      --gold: #ffb400;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-    body { background-color: var(--light); color: var(--dark); padding-bottom: 60px; }
-    header { background-color: #fff; padding: 15px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; position: sticky; top: 0; z-index: 100; }
-    header h1 { color: var(--primary); font-size: 1.5rem; margin-bottom: 5px; }
-    header p { font-size: 0.85rem; color: var(--gray); }
-    .hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=800'); background-size: cover; background-position: center; color: white; text-align: center; padding: 40px 20px; }
-    .hero h2 { font-size: 1.8rem; margin-bottom: 10px; }
-    .hero p { font-size: 1rem; margin-bottom: 15px; }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+    body { background-color: var(--light-bg); color: var(--dark); padding-bottom: 70px; }
+
+    /* Header & Top Bar */
+    .top-bar { background-color: var(--dark); color: var(--white); text-align: center; padding: 8px 15px; font-size: 0.8rem; font-weight: 500; }
+    header { background-color: var(--white); padding: 15px 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); text-align: center; position: sticky; top: 0; z-index: 100; }
+    header h1 { color: var(--primary); font-size: 1.6rem; font-weight: 800; letter-spacing: -0.5px; }
+    header p { font-size: 0.85rem; color: var(--gray); margin-top: 2px; }
+
+    .contacts-header { display: flex; justify-content: center; gap: 15px; margin-top: 10px; font-size: 0.85rem; }
+    .contacts-header a { color: var(--dark); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 4px; }
+
+    /* Category Filter Bar */
+    .category-nav { display: flex; justify-content: center; gap: 8px; overflow-x: auto; padding: 15px; background: var(--white); border-bottom: 1px solid var(--border); }
+    .cat-btn { background: var(--light-bg); border: 1px solid var(--border); padding: 8px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; cursor: pointer; white-space: nowrap; transition: all 0.3s ease; }
+    .cat-btn.active, .cat-btn:hover { background: var(--primary); color: var(--white); border-color: var(--primary); }
+
+    /* Container & Layout */
     .container { max-width: 1000px; margin: 20px auto; padding: 0 15px; }
-    .section-title { font-size: 1.3rem; color: var(--dark); margin-bottom: 15px; border-left: 4px solid var(--primary); padding-left: 10px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 15px; }
-    .card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); display: flex; flex-direction: column; justify-content: space-between; }
-    .card img { width: 100%; height: 180px; object-fit: cover; }
-    .card-body { padding: 12px; }
-    .card-title { font-size: 1rem; font-weight: bold; margin-bottom: 5px; color: #333; }
-    .card-desc { font-size: 0.8rem; color: var(--gray); margin-bottom: 10px; height: 32px; overflow: hidden; }
-    .price-box { margin-bottom: 12px; }
-    .price { font-size: 1.1rem; font-weight: bold; color: var(--primary); }
-    .old-price { font-size: 0.85rem; color: #999; text-decoration: line-through; margin-left: 6px; }
-    .btn-whatsapp { display: block; width: 100%; background-color: var(--secondary); color: white; text-align: center; padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 0.9rem; border: none; cursor: pointer; }
-    .btn-whatsapp:hover { opacity: 0.9; }
-    footer { text-align: center; padding: 20px; color: var(--gray); font-size: 0.8rem; margin-top: 30px; }
+    .section-title { font-size: 1.25rem; font-weight: 700; color: var(--dark); margin-bottom: 15px; border-left: 4px solid var(--primary); padding-left: 10px; }
+
+    /* Product Grid */
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px; }
+    .card { background: var(--white); border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between; position: relative; transition: transform 0.25s ease, box-shadow 0.25s ease; border: 1px solid var(--border); }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
+
+    /* Badges & Media */
+    .badge { position: absolute; top: 10px; left: 10px; background: var(--primary); color: var(--white); font-size: 0.7rem; font-weight: bold; padding: 4px 8px; border-radius: 4px; text-transform: uppercase; z-index: 2; }
+    .badge-combo { background: #6a1b9a; }
+    .card img { width: 100%; height: 190px; object-fit: cover; }
+
+    /* Card Details */
+    .card-body { padding: 14px; flex-grow: 1; display: flex; flex-direction: column; }
+    .card-title { font-size: 0.98rem; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+    
+    /* Ratings */
+    .rating { display: flex; align-items: center; gap: 4px; font-size: 0.8rem; color: var(--gold); margin-bottom: 8px; }
+    .rating-count { color: var(--gray); font-size: 0.75rem; margin-left: 2px; }
+
+    /* Highlights & Specs */
+    .specs { font-size: 0.78rem; color: var(--gray); margin-bottom: 12px; list-style-position: inside; }
+    .specs li { margin-bottom: 3px; }
+
+    /* Pricing */
+    .price-container { margin-top: auto; margin-bottom: 12px; display: flex; align-items: baseline; gap: 8px; }
+    .price { font-size: 1.15rem; font-weight: 800; color: var(--primary); }
+    .old-price { font-size: 0.85rem; color: #999; text-decoration: line-through; }
+    .save-tag { font-size: 0.7rem; color: var(--whatsapp); font-weight: bold; background: #e8f5e9; padding: 2px 6px; border-radius: 3px; }
+
+    /* Action Button */
+    .btn-whatsapp { display: flex; align-items: center; justify-content: center; gap: 6px; width: 100%; background-color: var(--whatsapp); color: var(--white); text-align: center; padding: 10px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 0.88rem; border: none; cursor: pointer; transition: background 0.2s ease; }
+    .btn-whatsapp:hover { background-color: #20ba5a; }
+
+    /* Customer Reviews Section */
+    .reviews-section { background: var(--white); padding: 25px 20px; border-radius: 10px; margin-top: 35px; border: 1px solid var(--border); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 15px; }
+    .review-card { background: var(--light-bg); padding: 12px 15px; border-radius: 8px; font-size: 0.82rem; }
+    .review-user { font-weight: bold; color: var(--dark); margin-top: 6px; display: block; }
+
+    /* Floating WhatsApp Button */
+    .float-wa { position: fixed; bottom: 20px; right: 20px; background-color: var(--whatsapp); color: white; border-radius: 50px; padding: 12px 20px; font-weight: bold; font-size: 0.85rem; box-shadow: 0 4px 15px rgba(0,0,0,0.25); text-decoration: none; display: flex; align-items: center; gap: 8px; z-index: 1000; animation: pulse 2s infinite; }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    footer { text-align: center; padding: 25px 15px; color: var(--gray); font-size: 0.8rem; margin-top: 40px; background: var(--white); border-top: 1px solid var(--border); }
   </style>
 </head>
 <body>
 
+  <div class="top-bar">
+    🚚 Fast Delivery Across Kampala & Central Uganda | Pay on Delivery
+  </div>
+
   <header>
     <h1>9t Quality Kitchenware</h1>
-    <p>Premium Home & Kitchen Appliances in Uganda</p>
+    <p>Premium Home & Kitchen Appliances</p>
+    <div class="contacts-header">
+      <a href="https://wa.me/256784891092">💬 WhatsApp: 0784891092</a>
+      <a href="tel:0740701068">📞 Call: 0740701068</a>
+    </div>
   </header>
 
-  <section class="hero">
-    <h2>Quality Appliances for Every Home</h2>
-    <p>Fast delivery & reliable customer support</p>
-  </section>
+  <!-- Category Nav Tabs -->
+  <div class="category-nav">
+    <button class="cat-btn active" onclick="filterCategory('all', this)">All Products</button>
+    <button class="cat-btn" onclick="filterCategory('combos', this)">🔥 Combos & Deals</button>
+    <button class="cat-btn" onclick="filterCategory('kitchenware', this)">🍳 Kitchenware & Appliances</button>
+    <button class="cat-btn" onclick="filterCategory('bar', this)">🍹 Bar & Beverages</button>
+  </div>
 
   <div class="container">
-    <h3 class="section-title">Featured Products</h3>
-    <div class="grid">
+    <h3 class="section-title">Catalog Highlights</h3>
+    
+    <div class="grid" id="product-grid">
 
-      <!-- Product 1 -->
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1585659722983-3a675dabf23d?w=500" alt="Steam Iron">
+      <!-- Product 1: Combo -->
+      <div class="card" data-category="combos">
+        <span class="badge badge-combo">Hot Combo</span>
+        <img src="https://images.unsplash.com/photo-1585659722983-3a675dabf23d?w=500" alt="Iron + Kettle Combo">
         <div class="card-body">
-          <div class="card-title">NUO Steam Iron (AN-128)</div>
-          <div class="card-desc">Non-stick soleplate with powerful steam spray for quick ironing.</div>
-          <div class="price-box">
-            <span class="price">UGX 45,000</span>
-            <span class="old-price">UGX 55,000</span>
+          <div class="card-title">Steam Iron + Electric Kettle Bundle</div>
+          <div class="rating">★★★★★ <span class="rating-count">(32)</span></div>
+          <ul class="specs">
+            <li>NUO Steam Iron 1200W</li>
+            <li>2.0L Stainless Steel Kettle</li>
+            <li>Free Kampala Delivery</li>
+          </ul>
+          <div class="price-container">
+            <span class="price">UGX 85,000</span>
+            <span class="old-price">UGX 105,000</span>
+            <span class="save-tag">SAVE 19%</span>
           </div>
-          <a href="https://wa.me/256700000000?text=Hello%209t%20Kitchenware,%20I%20want%20to%20buy%20the%20NUO%20Steam%20Iron" class="btn-whatsapp" target="_blank">Order on WhatsApp</a>
+          <a href="https://wa.me/256784891092?text=Hello%209t%20Kitchenware,%20I%20want%20to%20order%20the%20Steam%20Iron%20%2B%20Electric%20Kettle%20Bundle%20for%20UGX%2085,000" class="btn-whatsapp" target="_blank">Order on WhatsApp</a>
         </div>
       </div>
 
-      <!-- Product 2 -->
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?w=500" alt="Dry Iron">
+      <!-- Product 2: Kitchenware -->
+      <div class="card" data-category="kitchenware">
+        <span class="badge">Best Seller</span>
+        <img src="https://images.unsplash.com/photo-1585659722983-3a675dabf23d?w=500" alt="NUO Steam Iron">
         <div class="card-body">
-          <div class="card-title">Philips Classic Dry Iron</div>
-          <div class="card-desc">Durable heavy-duty dry iron with temperature control knob.</div>
-          <div class="price-box">
+          <div class="card-title">NUO Steam Iron (AN-128)</div>
+          <div class="rating">★★★★★ <span class="rating-count">(48)</span></div>
+          <ul class="specs">
+            <li>Non-stick soleplate</li>
+            <li>Powerful steam spray knob</li>
+            <li>Self-cleaning function</li>
+          </ul>
+          <div class="price-container">
+            <span class="price">UGX 45,000</span>
+            <span class="old-price">UGX 55,000</span>
+            <span class="save-tag">SAVE 18%</span>
+          </div>
+          <a href="https://wa.me/256784891092?text=Hello%209t%20Kitchenware,%20I%20want%20to%20order%20the%20NUO%20Steam%20Iron%20(AN-128)%20for%20UGX%2045,000" class="btn-whatsapp" target="_blank">Order on WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- Product 3: Kitchenware -->
+      <div class="card" data-category="kitchenware">
+        <img src="https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?w=500" alt="Philips Dry Iron">
+        <div class="card-body">
+          <div class="card-title">Philips Classic Heavy-Duty Dry Iron</div>
+          <div class="rating">★★★★☆ <span class="rating-count">(19)</span></div>
+          <ul class="specs">
+            <li>Heavyweight metal soleplate</li>
+            <li>Precision thermostat dial</li>
+            <li>Long durable fabric cord</li>
+          </ul>
+          <div class="price-container">
             <span class="price">UGX 65,000</span>
             <span class="old-price">UGX 75,000</span>
+            <span class="save-tag">SAVE 13%</span>
           </div>
-          <a href="https://wa.me/256700000000?text=Hello%209t%20Kitchenware,%20I%20want%20to%20buy%20the%20Philips%20Dry%20Iron" class="btn-whatsapp" target="_blank">Order on WhatsApp</a>
+          <a href="https://wa.me/256784891092?text=Hello%209t%20Kitchenware,%20I%20want%20to%20order%20the%20Philips%20Classic%20Dry%20Iron%20for%20UGX%2065,000" class="btn-whatsapp" target="_blank">Order on WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- Product 4: Bar Category -->
+      <div class="card" data-category="bar">
+        <span class="badge">Popular</span>
+        <img src="https://images.unsplash.com/photo-1570222094114-d054a817e56b?w=500" alt="Heavy Duty Blender">
+        <div class="card-body">
+          <div class="card-title">Commercial Countertop Blender</div>
+          <div class="rating">★★★★★ <span class="rating-count">(27)</span></div>
+          <ul class="specs">
+            <li>2000W High power motor</li>
+            <li>Crushes ice & hard fruits</li>
+            <li>2L Unbreakable jar</li>
+          </ul>
+          <div class="price-container">
+            <span class="price">UGX 140,000</span>
+            <span class="old-price">UGX 165,000</span>
+            <span class="save-tag">SAVE 15%</span>
+          </div>
+          <a href="https://wa.me/256784891092?text=Hello%209t%20Kitchenware,%20I%20want%20to%20order%20the%20Commercial%20Countertop%20Blender%20for%20UGX%20140,000" class="btn-whatsapp" target="_blank">Order on WhatsApp</a>
         </div>
       </div>
 
     </div>
+
+    <!-- Customer Feedback -->
+    <div class="reviews-section">
+      <h4 style="color: var(--dark); font-size: 1.1rem;">Verified Customer Feedback</h4>
+      <div class="reviews-grid">
+        <div class="review-card">
+          "Ordered the steam iron and received it in Ntinda within 2 hours. Very authentic product!"
+          <span class="review-user">★ ★ ★ ★ ★ — Sarah K.</span>
+        </div>
+        <div class="review-card">
+          "The blender is heavy duty as described. Crushes ice with no issue. Great service!"
+          <span class="review-user">★ ★ ★ ★ ★ — Isaac M.</span>
+        </div>
+      </div>
+    </div>
   </div>
 
+  <!-- Floating Quick Chat -->
+  <a href="https://wa.me/256784891092?text=Hello%209t%20Kitchenware,%20I%20have%20an%20inquiry%20about%20your%20products" class="float-wa" target="_blank">
+    💬 Quick Order
+  </a>
+
   <footer>
-    &copy; 2026 9t Quality Kitchenware. All Rights Reserved.
+    <p><strong>9t Quality Kitchenware</strong> — William Street, Kampala, Uganda</p>
+    <p style="margin-top: 5px;">Primary WhatsApp: 0784891092 | Support: 0740701068</p>
+    <p style="margin-top: 10px; color: #999;">&copy; 2026 All Rights Reserved.</p>
   </footer>
 
+  <script>
+    // Smooth Category Filter
+    function filterCategory(category, element) {
+      const buttons = document.querySelectorAll('.cat-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      element.classList.add('active');
+
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
 </body>
 </html>
