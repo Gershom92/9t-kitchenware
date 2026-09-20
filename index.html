@@ -1,350 +1,679 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>9t Quality Kitchenware | Premium Cookware & Appliances</title>
-    <meta name="description" content="Discover durable, elegant, and high-performance kitchenware at 9t Quality Kitchenware in Uganda. Fast delivery available.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9t Quality Kitchenware & Barware</title>
+  <style>
+    :root {
+      --primary: #25d366;
+      --primary-dark: #128c7e;
+      --secondary: #d32f2f;
+      --dark: #1e293b;
+      --light: #f8f9fa;
+      --gray: #64748b;
+      --shadow: 0 4px 15px rgba(0,0,0,0.08);
+      --transition: all 0.25s ease-in-out;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f4f6f8;
+      color: #1a1a1a;
+      line-height: 1.5;
+    }
+
+    /* Top Banner */
+    .announcement {
+      background: var(--dark);
+      color: #fff;
+      text-align: center;
+      padding: 8px 15px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* Header & Live Search Bar */
+    header {
+      background: #ffffff;
+      padding: 15px 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--dark);
+      text-decoration: none;
+    }
+
+    .logo span { color: var(--secondary); }
+
+    .search-box {
+      flex: 1;
+      max-width: 400px;
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 10px 15px;
+      border: 2px solid #e2e8f0;
+      border-radius: 25px;
+      outline: none;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .search-box input:focus {
+      border-color: var(--primary-dark);
+      box-shadow: 0 0 8px rgba(18, 140, 126, 0.2);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      color: white;
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    .hero h1 { font-size: 1.8rem; margin-bottom: 8px; }
+    .hero p { font-size: 0.95rem; opacity: 0.9; margin-bottom: 20px; }
     
-    <style>
-        /* Base Styling */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        body {
-            color: #333;
-            background-color: #f8f9fa;
-            line-height: 1.6;
-        }
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 0.8rem;
+    }
 
-        /* Top Announcement Bar */
-        .announcement-bar {
-            background-color: #d9534f;
-            color: #fff;
-            text-align: center;
-            padding: 8px 15px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
+    .badge-item {
+      background: rgba(255,255,255,0.12);
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
 
-        /* Header & Navigation */
-        header {
-            background-color: #ffffff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 5%;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .logo {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: #111;
-            text-decoration: none;
-        }
-        nav a {
-            margin-left: 20px;
-            text-decoration: none;
-            color: #555;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        nav a:hover {
-            color: #d9534f;
-        }
+    /* Category Filter Tabs */
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 20px 15px 10px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-            color: #fff;
-            text-align: center;
-            padding: 80px 20px;
-        }
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-        .hero p {
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto 25px auto;
-        }
-        .btn-primary {
-            display: inline-block;
-            background-color: #d9534f;
-            color: #fff;
-            padding: 12px 28px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.2s;
-        }
-        .btn-primary:hover {
-            background-color: #c9302c;
-        }
+    .filter-btn {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      padding: 8px 16px;
+      border-radius: 25px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
 
-        /* Products Grid */
-        .section-padding {
-            padding: 60px 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .section-title {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .section-title h2 {
-            font-size: 2rem;
-            color: #111;
-        }
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-        .product-card {
-            background-color: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .product-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        }
-        .product-card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-        }
-        .product-details {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            justify-content: space-between;
-        }
-        .product-title {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-            color: #222;
-        }
-        .product-price {
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: #d9534f;
-            margin-bottom: 15px;
-        }
-        .btn-whatsapp {
-            display: inline-block;
-            text-align: center;
-            background-color: #25D366;
-            color: #fff;
-            padding: 10px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.2s;
-        }
-        .btn-whatsapp:hover {
-            background-color: #1ebe57;
-        }
+    .filter-btn:active {
+      transform: scale(0.95);
+    }
 
-        /* Contact Section */
-        .contact-section {
-            background-color: #fff;
-            border-top: 1px solid #eee;
-        }
-        .contact-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-        .contact-info {
-            flex: 1;
-            min-width: 250px;
-        }
-        .contact-info div {
-            margin-bottom: 15px;
-        }
-        .contact-info a {
-            color: #d9534f;
-            text-decoration: none;
-            font-weight: 500;
-        }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--dark);
+      color: white;
+      border-color: var(--dark);
+    }
 
-        /* Floating WhatsApp Button */
-        .floating-whatsapp {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background-color: #25D366;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: transform 0.2s;
-        }
-        .floating-whatsapp:hover {
-            transform: scale(1.05);
-        }
+    /* Catalog Grid */
+    .catalog {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 15px 15px 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 20px;
+    }
 
-        /* Footer */
-        footer {
-            background-color: #111;
-            color: #aaa;
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
-        }
-    </style>
+    /* Product Cards & CSS Animations */
+    .product-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    }
+
+    .img-container {
+      position: relative;
+      width: 100%;
+      height: 190px;
+      background: #e2e8f0;
+    }
+
+    .img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .discount-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: var(--secondary);
+      color: white;
+      font-weight: 700;
+      font-size: 0.75rem;
+      padding: 4px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    .product-info {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .product-desc {
+      font-size: 0.85rem;
+      color: var(--gray);
+      margin-bottom: 10px;
+    }
+
+    .highlights {
+      list-style: none;
+      margin-bottom: 15px;
+      font-size: 0.8rem;
+      color: #334155;
+    }
+
+    .highlights li {
+      margin-bottom: 4px;
+      position: relative;
+      padding-left: 14px;
+    }
+
+    .highlights li::before {
+      content: "•";
+      color: var(--primary-dark);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    .price-box {
+      margin-top: auto;
+      margin-bottom: 12px;
+    }
+
+    .current-price {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--dark);
+    }
+
+    .old-price {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      text-decoration: line-through;
+      margin-left: 6px;
+    }
+
+    .savings {
+      display: block;
+      font-size: 0.75rem;
+      color: #15803d;
+      font-weight: 700;
+    }
+
+    /* WhatsApp Order Buttons */
+    .order-btn {
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      text-align: center;
+      padding: 10px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+
+    .order-btn:hover {
+      background: var(--primary-dark);
+    }
+
+    .order-btn:active {
+      transform: scale(0.96);
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+      background: #ffffff;
+      padding: 40px 20px;
+      text-align: center;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .testimonials h2 {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 15px;
+    }
+
+    .test-card {
+      background: #f8fafc;
+      padding: 18px;
+      border-radius: 10px;
+      text-align: left;
+      font-size: 0.85rem;
+      border: 1px solid #f1f5f9;
+    }
+
+    .stars { color: #f59e0b; margin-bottom: 6px; }
+
+    /* Interactive WhatsApp Bot Modal & Floating Button */
+    .floating-wa {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--primary);
+      color: white;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+      text-decoration: none;
+      font-size: 1.8rem;
+      z-index: 1000;
+      cursor: pointer;
+      animation: pulse 3s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+      70% { transform: scale(1.05); box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    .bot-modal {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 320px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 1000;
+      border: 1px solid #e2e8f0;
+    }
+
+    .bot-header {
+      background: var(--primary-dark);
+      color: white;
+      padding: 12px 15px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .bot-close {
+      cursor: pointer;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .bot-body {
+      padding: 15px;
+      font-size: 0.85rem;
+      max-height: 250px;
+      overflow-y: auto;
+    }
+
+    .bot-msg {
+      background: #f1f5f9;
+      padding: 10px 12px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .bot-options {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .bot-opt-btn {
+      background: white;
+      border: 1px solid var(--primary-dark);
+      color: var(--primary-dark);
+      padding: 8px;
+      border-radius: 6px;
+      text-align: left;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .bot-opt-btn:hover {
+      background: var(--primary-dark);
+      color: white;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Announcement Bar -->
-    <div class="announcement-bar">
-        🚚 Fast Delivery Across Kampala & Countrywide | Pay on Delivery Available
+  <div class="announcement">
+    ⚡ Pay on Delivery Available Across Central Uganda! Fast WhatsApp Orders ⚡
+  </div>
+
+  <header>
+    <a href="#" class="logo">9t <span>Kitchenware & Bar</span></a>
+    
+    <!-- Live Search Bar -->
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search kettle, iron, shaker, glass..." onkeyup="searchProducts()">
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Quality Kitchenware & Bar Supplies</h1>
+    <p>Upgrade your home with premium appliances, cookware, and barware at discount prices.</p>
+    <div class="trust-badges">
+      <span class="badge-item">✓ Fast Local Delivery</span>
+      <span class="badge-item">✓ Pay on Delivery</span>
+      <span class="badge-item">✓ 100% Quality Guarantee</span>
+    </div>
+  </section>
+
+  <!-- Category Filter Buttons -->
+  <div class="filters">
+    <button class="filter-btn active" onclick="filterCategory('all', event)">🛍️ All Products</button>
+    <button class="filter-btn" onclick="filterCategory('hot', event)">🔥 Hot Deals</button>
+    <button class="filter-btn" onclick="filterCategory('kitchen', event)">🍳 Kitchenware</button>
+    <button class="filter-btn" onclick="filterCategory('bar', event)">🍸 Barware</button>
+    <button class="filter-btn" onclick="filterCategory('laundry', event)">🧺 Laundry & Irons</button>
+  </div>
+
+  <!-- Product Catalog -->
+  <main class="catalog" id="catalog">
+
+    <!-- Item 1: Kettle (Kitchenware / Hot) -->
+    <div class="product-card" data-category="kitchen hot">
+      <div class="img-container">
+        <span class="discount-badge">-17% OFF</span>
+        <img src="https://via.placeholder.com/300x200?text=Electric+Kettle" alt="Stainless Steel Electric Kettle">
+      </div>
+      <div class="product-info">
+        <h3 class="product-title">Stainless Steel Electric Kettle (2.0L)</h3>
+        <p class="product-desc">Fast-boiling 2.0L kettle for tea, coffee, and cooking.</p>
+        <ul class="highlights">
+          <li>Automatic boil-dry safety shutoff sensor</li>
+          <li>360-degree cordless swivel base</li>
+          <li>Durable food-grade stainless steel body</li>
+        </ul>
+        <div class="price-box">
+          <span class="current-price">UGX 35,000</span>
+          <span class="old-price">UGX 42,000</span>
+          <span class="savings">Save UGX 7,000</span>
+        </div>
+        <a href="https://wa.me/256700000000?text=Hi%2C%20I%20would%20like%20to%20order%20the%20Stainless%20Steel%20Electric%20Kettle%20for%20UGX%2035%2C000" class="order-btn" target="_blank">
+          Order via WhatsApp
+        </a>
+      </div>
     </div>
 
-    <!-- Header -->
-    <header>
-        <a href="#" class="logo">9t Quality Kitchenware</a>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#products">Products</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Quality Tools for the Heart of Your Home</h1>
-        <p>Discover durable, elegant, and high-performance kitchenware designed to elevate your everyday cooking.</p>
-        <a href="#products" class="btn-primary">Shop Our Collection</a>
-    </section>
-
-    <!-- Products Section -->
-    <section id="products" class="section-padding">
-        <div class="section-title">
-            <h2>Our Featured Items</h2>
-            <p>Premium quality kitchen products at incredible prices.</p>
+    <!-- Item 2: Shaker Set (Barware / Hot) -->
+    <div class="product-card" data-category="bar hot">
+      <div class="img-container">
+        <span class="discount-badge">-15% OFF</span>
+        <img src="https://via.placeholder.com/300x200?text=Cocktail+Shaker" alt="Stainless Steel Cocktail Shaker Set">
+      </div>
+      <div class="product-info">
+        <h3 class="product-title">Stainless Steel Cocktail Shaker Set</h3>
+        <p class="product-desc">Professional leak-proof cocktail shaker set for drinks and juices.</p>
+        <ul class="highlights">
+          <li>Heavy-duty rust-proof stainless steel</li>
+          <li>Built-in strainer for smooth pouring</li>
+          <li>Easy to wash and dishwasher safe</li>
+        </ul>
+        <div class="price-box">
+          <span class="current-price">UGX 42,000</span>
+          <span class="old-price">UGX 50,000</span>
+          <span class="savings">Save UGX 8,000</span>
         </div>
+        <a href="https://wa.me/256700000000?text=Hi%2C%20I%20would%20like%20to%20order%20the%20Cocktail%20Shaker%20Set%20for%20UGX%2042%2C000" class="order-btn" target="_blank">
+          Order via WhatsApp
+        </a>
+      </div>
+    </div>
 
-        <div class="product-grid">
-            
-            <!-- Item 1 -->
-            <div class="product-card">
-                <img src="https://i.postimg.cc/J492wNdP/2deefa47e0fc483ab867d4f5c89fe849.jpg" alt="Hoffmans Infrared Cooker">
-                <div class="product-details">
-                    <div>
-                        <h3 class="product-title">Hoffman's Infrared Cooker</h3>
-                        <p class="product-price">120,000 UGX</p>
-                    </div>
-                    <a href="https://wa.me/256784891092?text=Hello%209t%20Quality%20Kitchenware!%20I%20want%20to%20order%20the%20Hoffman's%20Infrared%20Cooker." target="_blank" class="btn-whatsapp">
-                        Order on WhatsApp
-                    </a>
-                </div>
-            </div>
-
-            <!-- Item 2 -->
-            <div class="product-card">
-                <img src="https://i.postimg.cc/XYdDnrTP/36a31d09056040c6adfaa9d2c113fd45.jpg" alt="Black Tornado Non-Stick Dish with Frying Pan">
-                <div class="product-details">
-                    <div>
-                        <h3 class="product-title">Black Tornado Non-Stick Dish & Frying Pan</h3>
-                        <p class="product-price">180,000 UGX</p>
-                    </div>
-                    <a href="https://wa.me/256784891092?text=Hello%209t%20Quality%20Kitchenware!%20I%20want%20to%20order%20the%20Black%20Tornado%20Non-Stick%20Dish%20%26%20Frying%20Pan." target="_blank" class="btn-whatsapp">
-                        Order on WhatsApp
-                    </a>
-                </div>
-            </div>
-
-            <!-- Item 3 -->
-            <div class="product-card">
-                <img src="https://i.postimg.cc/pLz1Pmg6/44aa7b8341d54601b97a87773a62093f.jpg" alt="Dinner Set 24 Pieces">
-                <div class="product-details">
-                    <div>
-                        <h3 class="product-title">Premium Dinner Set (24 Pieces)</h3>
-                        <p class="product-price">150,000 UGX</p>
-                    </div>
-                    <a href="https://wa.me/256784891092?text=Hello%209t%20Quality%20Kitchenware!%20I%20want%20to%20order%20the%20Premium%20Dinner%20Set%20(24%20Pieces)." target="_blank" class="btn-whatsapp">
-                        Order on WhatsApp
-                    </a>
-                </div>
-            </div>
-
-            <!-- Item 4 -->
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1621972750749-0fbb1abb7736?auto=format&fit=crop&w=500&q=80" alt="Hoffmans Air Fryer">
-                <div class="product-details">
-                    <div>
-                        <h3 class="product-title">Hoffmans Air Fryer (6 Litres)</h3>
-                        <p class="product-price">150,000 UGX</p>
-                    </div>
-                    <a href="https://wa.me/256784891092?text=Hello%209t%20Quality%20Kitchenware!%20I%20want%20to%20order%20the%20Hoffmans%20Air%20Fryer%20(6%20Litres)." target="_blank" class="btn-whatsapp">
-                        Order on WhatsApp
-                    </a>
-                </div>
-            </div>
-
+    <!-- Item 3: NUO Steam Iron (Laundry / Hot) -->
+    <div class="product-card" data-category="laundry hot">
+      <div class="img-container">
+        <span class="discount-badge">-18% OFF</span>
+        <img src="https://via.placeholder.com/300x200?text=NUO+Steam+Iron" alt="NUO Steam Iron AN-128">
+      </div>
+      <div class="product-info">
+        <h3 class="product-title">NUO Steam Iron (Model AN-128)</h3>
+        <p class="product-desc">Powerful steam iron for crisp, wrinkle-free clothes in seconds.</p>
+        <ul class="highlights">
+          <li>1200W rapid heating non-stick ceramic soleplate</li>
+          <li>Adjustable temperature control dial</li>
+          <li>Energy-efficient low power consumption</li>
+        </ul>
+        <div class="price-box">
+          <span class="current-price">UGX 45,000</span>
+          <span class="old-price">UGX 55,000</span>
+          <span class="savings">Save UGX 10,000</span>
         </div>
-    </section>
+        <a href="https://wa.me/256700000000?text=Hi%2C%20I%20would%20like%20to%20order%20the%20NUO%20Steam%20Iron%20for%20UGX%2045%2C000" class="order-btn" target="_blank">
+          Order via WhatsApp
+        </a>
+      </div>
+    </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section-padding contact-section">
-        <div class="section-title">
-            <h2>Get In Touch</h2>
-            <p>Have questions or want to place a custom order? Reach out to us today!</p>
+    <!-- Item 4: Whiskey Glass Set (Barware) -->
+    <div class="product-card" data-category="bar">
+      <div class="img-container">
+        <span class="discount-badge">-18% OFF</span>
+        <img src="https://via.placeholder.com/300x200?text=Whiskey+Glasses" alt="Whiskey Glasses Set">
+      </div>
+      <div class="product-info">
+        <h3 class="product-title">Whiskey Glasses & Ice Bucket Set</h3>
+        <p class="product-desc">Elegant thick-glass tumbler set with matching ice bucket.</p>
+        <ul class="highlights">
+          <li>Heavy crystal-clear glass construction</li>
+          <li>Insulated ice bucket keeps drinks ice-cold</li>
+          <li>Classic weighted base design</li>
+        </ul>
+        <div class="price-box">
+          <span class="current-price">UGX 55,000</span>
+          <span class="old-price">UGX 67,000</span>
+          <span class="savings">Save UGX 12,000</span>
         </div>
+        <a href="https://wa.me/256700000000?text=Hi%2C%20I%20would%20like%20to%20order%20the%20Whiskey%20Glass%20Set%20for%20UGX%2055%2C000" class="order-btn" target="_blank">
+          Order via WhatsApp
+        </a>
+      </div>
+    </div>
 
-        <div class="contact-container">
-            <div class="contact-info">
-                <div>
-                    <strong>Email:</strong><br>
-                    <a href="mailto:gershommuwanguzi92@gmail.com">gershommuwanguzi92@gmail.com</a>
-                </div>
-                <div>
-                    <strong>Call Us:</strong><br>
-                    <a href="tel:+256784891092">+256 784 891092</a><br>
-                    <a href="tel:+256740701068">+256 740 701068</a>
-                </div>
-            </div>
-            <div>
-                <a href="https://wa.me/256784891092?text=Hello%209t%20Quality%20Kitchenware!%20I'm%20interested%20in%20your%20products." target="_blank" class="btn-whatsapp" style="padding: 15px 25px;">
-                    💬 General Inquiry via WhatsApp
-                </a>
-            </div>
+    <!-- Item 5: Philips Dry Iron (Laundry) -->
+    <div class="product-card" data-category="laundry">
+      <div class="img-container">
+        <span class="discount-badge">-15% OFF</span>
+        <img src="https://via.placeholder.com/300x200?text=Philips+Dry+Iron" alt="Philips Heavyweight Dry Iron">
+      </div>
+      <div class="product-info">
+        <h3 class="product-title">Philips Heavyweight Dry Iron</h3>
+        <p class="product-desc">Heavy-duty dry iron built for smooth everyday pressing.</p>
+        <ul class="highlights">
+          <li>Golden non-stick durable soleplate</li>
+          <li>Precision button groove for easy ironing</li>
+          <li>Thermal safety fuse prevents overheating</li>
+        </ul>
+        <div class="price-box">
+          <span class="current-price">UGX 55,000</span>
+          <span class="old-price">UGX 65,000</span>
+          <span class="savings">Save UGX 10,000</span>
         </div>
-    </section>
+        <a href="https://wa.me/256700000000?text=Hi%2C%20I%20would%20like%20to%20order%20the%20Philips%20Dry%20Iron%20for%20UGX%2055%2C000" class="order-btn" target="_blank">
+          Order via WhatsApp
+        </a>
+      </div>
+    </div>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/256784891092?text=Hello%209t%20Quality%20Kitchenware!%20I%20have%20a%20question." target="_blank" class="floating-whatsapp">
-        💬 Chat with Us
-    </a>
+  </main>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 9t Quality Kitchenware. All rights reserved.</p>
-    </footer>
+  <!-- Customer Testimonials -->
+  <section class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial-grid">
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <p>"Ordered the electric kettle in the morning and received it by afternoon. Works great!"</p>
+        <strong>- Sarah M., Kampala</strong>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <p>"The cocktail shaker set is pure quality. Ordering on WhatsApp was super smooth."</p>
+        <strong>- David K., Mukono</strong>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <p>"Very fast service and pay on delivery made me feel safe buying online."</p>
+        <strong>- Harriet N., Entebbe</strong>
+      </div>
+    </div>
+  </section>
 
+  <!-- Floating WhatsApp Assistant Button & Interactive Widget -->
+  <div class="floating-wa" onclick="toggleBot()">💬</div>
+
+  <div class="bot-modal" id="botModal">
+    <div class="bot-header">
+      <span>9t Sales Assistant</span>
+      <span class="bot-close" onclick="toggleBot()">✕</span>
+    </div>
+    <div class="bot-body">
+      <div class="bot-msg">
+        Hello! 👋 How can we help you today? Choose an option below to chat with us on WhatsApp:
+      </div>
+      <div class="bot-options">
+        <button class="bot-opt-btn" onclick="askBot('Check Item Availability & Stock')">📦 Check Item Availability</button>
+        <button class="bot-opt-btn" onclick="askBot('Ask about Delivery Rates & Locations')">🚚 Delivery Fees & Locations</button>
+        <button class="bot-opt-btn" onclick="askBot('Inquire about Payment Options')">💵 Pay on Delivery Terms</button>
+        <button class="bot-opt-btn" onclick="askBot('Speak to Live Agent')">👤 Speak to Live Agent</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript logic -->
+  <script>
+    // Live Search Functionality
+    function searchProducts() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.product-card');
+
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        if (text.includes(input)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Category Filtering
+    function filterCategory(cat, event) {
+      const cards = document.querySelectorAll('.product-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      // Clear search input when filtering
+      document.getElementById('searchInput').value = '';
+
+      cards.forEach(card => {
+        const categories = card.getAttribute('data-category');
+        if (cat === 'all' || categories.includes(cat)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Toggle WhatsApp Assistant Drawer
+    function toggleBot() {
+      const bot = document.getElementById('botModal');
+      if (bot.style.display === 'flex') {
+        bot.style.display = 'none';
+      } else {
+        bot.style.display = 'flex';
+      }
+    }
+
+    // Direct WhatsApp Redirect from Assistant
+    function askBot(query) {
+      const phone = "256784891092"; // Replace with your actual WhatsApp phone number
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent('Hi 9t Kitchenware, I would like to: ' + query)}`;
+      window.open(url, '_blank');
+    }
+  </script>
 </body>
 </html>
