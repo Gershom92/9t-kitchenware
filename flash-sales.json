@@ -1,0 +1,39 @@
+{
+  "day": "2026-11-18",
+  "verifiedAt": "2026-11-18T07:18:49Z",
+  "expiresAt": "2026-11-18T08:03:49Z",
+  "products": [
+    {
+      "id": "cmubo8vzm00030agm1pf3hrny",
+      "name": "7-Piece Heavy-Duty Cookware Saucepan Set",
+      "price": 150000,
+      "salePrice": 135000,
+      "image": "https://storage.googleapis.com/takeapp/media/cmubo80he000009gm6x1h7srw.jpg",
+      "productUrl": "https://take.app/gershommuwanguzi92/p/cmubo8vzm00030agm1pf3hrny"
+    },
+    {
+      "id": "cmubp9ja2000009gmskv6dyko",
+      "name": "11-Piece Non-Stick Granite Cookware Set",
+      "price": 185000,
+      "salePrice": 166500,
+      "image": "https://storage.googleapis.com/takeapp/media/cmubp8wxj00010bgmchal3z2y.jpg",
+      "productUrl": "https://take.app/gershommuwanguzi92/p/cmubp9ja2000009gmskv6dyko"
+    },
+    {
+      "id": "cmubqthfj000709gmiaoler41",
+      "name": "Classic Whiskey Tumbler Glass",
+      "price": 35000,
+      "salePrice": 31500,
+      "image": "https://storage.googleapis.com/takeapp/media/cmubqslir00010agmdyfscqtw.jpg",
+      "productUrl": "https://take.app/gershommuwanguzi92/p/cmubqthfj000709gmiaoler41"
+    }
+  ],
+  "availabilityNotice": "Subject to seller confirmation of price and stock; stock is not tracked. Extra flash discount is not automatically applied by Take.app.",
+  "selectionHistory": {
+    "2026-11-18": [
+      "cmubo8vzm00030agm1pf3hrny",
+      "cmubp9ja2000009gmskv6dyko",
+      "cmubqthfj000709gmiaoler41"
+    ]
+  }
+}
