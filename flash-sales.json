@@ -1,31 +1,31 @@
 {
-  "day": "2026-11-18",
-  "verifiedAt": "2026-11-18T20:21:30Z",
-  "expiresAt": "2026-11-18T21:00:00Z",
+  "day": "2026-11-19",
+  "verifiedAt": "2026-11-18T21:07:19Z",
+  "expiresAt": "2026-11-18T21:52:19Z",
   "products": [
     {
-      "id": "cmubo8vzm00030agm1pf3hrny",
-      "name": "7-Piece Heavy-Duty Cookware Saucepan Set",
-      "price": 150000,
-      "salePrice": 135000,
-      "image": "https://storage.googleapis.com/takeapp/media/cmubo80he000009gm6x1h7srw.jpg",
-      "productUrl": "https://take.app/gershommuwanguzi92/p/cmubo8vzm00030agm1pf3hrny"
+      "id": "cmubpf0gr000b0agmwy2t3m2a",
+      "name": "Multi-Functional Vegetable Chopper & Slicer Set",
+      "price": 45000,
+      "salePrice": 40500,
+      "image": "https://storage.googleapis.com/takeapp/media/cmubpejfo00000agm04hcbig0.webp",
+      "productUrl": "https://take.app/gershommuwanguzi92/p/cmubpf0gr000b0agmwy2t3m2a"
     },
     {
-      "id": "cmubp9ja2000009gmskv6dyko",
-      "name": "11-Piece Non-Stick Granite Cookware Set",
-      "price": 185000,
-      "salePrice": 166500,
-      "image": "https://storage.googleapis.com/takeapp/media/cmubp8wxj00010bgmchal3z2y.jpg",
-      "productUrl": "https://take.app/gershommuwanguzi92/p/cmubp9ja2000009gmskv6dyko"
+      "id": "cmubqg4c5000d0agmyt1vlf9f",
+      "name": "Digital Food & Liquid Thermometer (TP300)",
+      "price": 25000,
+      "salePrice": 22500,
+      "image": "https://storage.googleapis.com/takeapp/media/cmubqfqry00010agm3h7p7d45.jpg",
+      "productUrl": "https://take.app/gershommuwanguzi92/p/cmubqg4c5000d0agmyt1vlf9f"
     },
     {
-      "id": "cmubqthfj000709gmiaoler41",
-      "name": "Classic Whiskey Tumbler Glass",
+      "id": "cmubqbkh100000agmk1h8tqle",
+      "name": "Heat-Resistant Quilted Oven Mitts Pair gloves",
       "price": 35000,
       "salePrice": 31500,
-      "image": "https://storage.googleapis.com/takeapp/media/cmubqslir00010agmdyfscqtw.jpg",
-      "productUrl": "https://take.app/gershommuwanguzi92/p/cmubqthfj000709gmiaoler41"
+      "image": "https://storage.googleapis.com/takeapp/media/cmubqb25l00000agmay4pg6tc.jpg",
+      "productUrl": "https://take.app/gershommuwanguzi92/p/cmubqbkh100000agmk1h8tqle"
     }
   ],
   "availabilityNotice": "Subject to seller confirmation of price and stock; stock is not tracked. Extra flash discount is not automatically applied by Take.app.",
@@ -34,6 +34,11 @@
       "cmubo8vzm00030agm1pf3hrny",
       "cmubp9ja2000009gmskv6dyko",
       "cmubqthfj000709gmiaoler41"
+    ],
+    "2026-11-19": [
+      "cmubpf0gr000b0agmwy2t3m2a",
+      "cmubqg4c5000d0agmyt1vlf9f",
+      "cmubqbkh100000agmk1h8tqle"
     ]
   }
 }
