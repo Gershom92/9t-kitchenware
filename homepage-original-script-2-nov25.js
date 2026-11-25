@@ -45,7 +45,7 @@
     let matches=specific;
     if(!matches.length&&/\b(glasses|glassware|drinking glass|glass sets?)\b/.test(q))matches=products.filter(p=>/glass/i.test(p.name)).slice(0,3);
     if(!matches.length&&/\b(pots?|cookware|saucepans?|pans?)\b/.test(q))matches=[products[1],products[3],products[2]];
-    if(!matches.length&&/\b(ice bucket|ice buckets)\b/.test(q))matches=[products[10],products[11]];
+    if(!matches.length&&/\b(ice bucket|ice buckets)\b/.test(q))matches=[products[11],products[12]];
     // Do not imply the listed 6L model matches a different requested capacity.
     const capacities=[...q.matchAll(/\b(\d+(?:\.\d+)?)\s*(?:l|lit(?:re|er)s?)\b/ig)].map(m=>Number(m[1]));
     if(matches.some(p=>p.path==='real-crest-6l-air-fryer.html')&&capacities.length&&!capacities.includes(6)){
