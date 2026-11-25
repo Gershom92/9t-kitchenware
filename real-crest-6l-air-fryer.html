@@ -13,7 +13,7 @@
 @media(max-width:700px){.topbar{align-items:flex-start;flex-direction:column;gap:13px}.main-nav{gap:8px 17px}.crumb{padding:16px 0 12px}.product,.details{grid-template-columns:1fr}.product{gap:14px}.photo-card img{max-height:420px}.details{gap:12px;margin-top:14px}.summary,.info-card{padding:20px}.price{font-size:1.85rem}}
 @media(prefers-color-scheme:dark){:root{--ink:#f8f1fb;--muted:#cfc2d7;--page:#17101d;--card:#271c30;--line:#493551;--accent:#d7a8f5;--accent-dark:#9c5ac1;--soft:#34213f;--header:#3c1759;--shadow:none}.order{background:#8842ac;color:#fff}.eyebrow,.section-label{color:#d7a8f5}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-</style>
+.gallery{min-width:0}.gallery-thumbs{display:flex;gap:10px;margin-top:12px}.gallery-thumbs button{padding:3px;border:2px solid var(--line);border-radius:10px;background:#fff;cursor:pointer}.gallery-thumbs button[aria-pressed="true"]{border-color:var(--accent)}.gallery-thumbs button:focus-visible{outline:3px solid #e0a2ff;outline-offset:3px}.gallery-thumbs img{display:block;width:72px;height:72px;object-fit:contain;border-radius:6px}</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -21,7 +21,7 @@
 <main class="wrap" id="main">
 <nav class="crumb" aria-label="Breadcrumb"><a href="./">Home</a> / <a href="kitchenware.html">Kitchenware</a> / <span aria-current="page">Real Crest 6L air fryer</span></nav>
 <section class="product" aria-labelledby="product-name">
-<figure class="photo-card"><img src="real-crest-6l-air-fryer-photo.svg" alt="Real Crest 6L air fryer" width="304" height="304" fetchpriority="high"></figure>
+<div class="gallery" aria-label="Product photos"><figure class="photo-card"><img id="main-photo" src="real-crest-6l-air-fryer-photo.svg" alt="Real Crest 6L air fryer, first photo" width="304" height="304" fetchpriority="high"></figure><div class="gallery-thumbs" aria-label="Choose a product photo"><button type="button" aria-label="Show first photo" aria-pressed="true" data-photo="real-crest-6l-air-fryer-photo.svg" data-alt="Real Crest 6L air fryer, first photo"><img src="real-crest-6l-air-fryer-photo.svg" alt="" width="80" height="80"></button><button type="button" aria-label="Show second photo" aria-pressed="false" data-photo="real-crest-air-fryer-second.svg" data-alt="Real Crest 6L air fryer, second photo"><img src="real-crest-air-fryer-second.svg" alt="" width="80" height="80"></button></div></div>
 <div class="summary"><p class="eyebrow">Kitchen appliances in Kampala</p><h1 id="product-name">Real Crest 6L Air Fryer</h1><p class="price">USh 145,000</p><p class="availability">Please confirm availability before ordering.</p>
 <div class="highlights"><h2>Highlights</h2><ul><li>Brand: Real Crest</li><li>Listed capacity: 6 litres</li><li>Ask us to confirm the features before ordering</li></ul></div>
 <a class="order" href="https://wa.me/256784891092?text=Hello%20Kitchenware%20and%20Bar%20Accessories%20Kampala%2C%20I%20would%20like%20to%20order%20the%20Real%20Crest%206L%20air%20fryer%20at%20USh%20145%2C000.%20Please%20confirm%20availability%20and%20delivery%20fee." target="_blank" rel="noopener noreferrer">Order on WhatsApp</a><p class="order-note">Ask us to confirm availability and the delivery fee.</p></div>
@@ -33,5 +33,5 @@
 </div>
 <section class="shop-box" aria-labelledby="contact"><h2 id="contact">Contact Kitchenware and Bar Accessories Kampala</h2><p>Nyumba Nkubwa, shop Lp129, basement level, Ben Kiwanuka Street, Kampala.</p><div class="shop-links"><a href="https://wa.me/256784891092" target="_blank" rel="noopener noreferrer">WhatsApp: +256 784 891 092</a><a href="kitchenware.html">Browse more kitchenware</a><a href="https://take.app/gershommuwanguzi92" target="_blank" rel="noopener noreferrer">View catalogue</a></div></section>
 </main><footer><div class="wrap"><p>Kitchenware and Bar Accessories Kampala</p></div></footer>
-</body>
+<script>document.querySelectorAll(".gallery-thumbs button").forEach(function(button){button.addEventListener("click",function(){var image=document.getElementById("main-photo");image.src=button.dataset.photo;image.alt=button.dataset.alt;document.querySelectorAll(".gallery-thumbs button").forEach(function(b){b.setAttribute("aria-pressed",String(b===button))})})})</script></body>
 </html>
